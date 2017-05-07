@@ -2,14 +2,15 @@
     <div class='panel-heading' style='font-size:large'>
         {{pageTitle}}
     </div>
+
     <div class="table-responsive">
-        <table class="table" *ngIf = 'products && products.length'>
+        <table class="table" *ngIf='products && products.length'>
             <thead>
                 <tr>
                     <th>
-                        <button class='btn btn-primary' style="font-size:smaller" item-width="10">
-                show image
-            </button>
+                        <button class='btn btn-primary' (click)='toggleImage()'>
+                              {{showImage ? 'Hide':'Show'}} image
+                       </button>
                     </th>
                     <th>Id</th>
                     <th>Name</th>
@@ -19,10 +20,9 @@
             </thead>
             <tbody>
 
-                <tr *ngFor = 'let product of products'> 
+                <tr *ngFor='let product of products'>
                     <td>
-                        <img [src] = 'product.imageUrl' [style.width.px] = 'imageWidth' 
-                             [title] = 'product.Name' [style.margin.px] = 'imageMargin'> 
+                        <img [src]='product.imageUrl' [style.width.px]='imageWidth' [title]='product.Name' [style.margin.px]='imageMargin' *ngIf='showImage'>
                     </td>
                     <td> {{product.Id}}</td>
                     <td> {{product.Name}}</td>

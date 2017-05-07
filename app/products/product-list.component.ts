@@ -10,6 +10,7 @@ export class ProductListComponent {
     pageTitle: string = 'Product list !';
     imageWidth : number = 50;
     imageMargin : number = 2;
+    showImage : boolean = false;
     products: any[] = [
         {
             "Id": 1,
@@ -27,4 +28,8 @@ export class ProductListComponent {
         }
 
     ];
+
+    toggleImage() : void{
+        this.showImage = !this.showImage;
+    }
 }

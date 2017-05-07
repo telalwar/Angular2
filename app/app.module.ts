@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {ProductListComponent} from './products/product-list.component';
 import { AppComponent }  from './app.component';
 
+
 @NgModule({
   imports: [ BrowserModule ],
   declarations: [ AppComponent , ProductListComponent],
